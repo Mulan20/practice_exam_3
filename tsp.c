@@ -32,7 +32,7 @@ float cal_total_distance(City *cities, int *path, int n)
 	}
 
 	//this is important because we will need to calculate the distance between the last city and the very first cit
-	total += calculate_distance(cities[path[n - 1]], cities[path[0]]);
+	total += cal_distance(cities[path[n - 1]], cities[path[0]]);
 
 	return total;
 }
@@ -50,7 +50,7 @@ void find_shortest_path(City *cities, int *path, int n, int pos, float *min_dist
 {
 	if (pos == n)
 	{
-		float current_distance = current_total_distance(cities, path, n);
+		float current_distance = cal_total_distance(cities, path, n);
 		if (current_distance < *min_distance)
 			*min_distance = current_distance;
 
